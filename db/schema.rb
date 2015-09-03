@@ -11,14 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150903142135) do
+ActiveRecord::Schema.define(version: 20150903142353) do
 
   create_table "responses", force: :cascade do |t|
     t.integer  "status"
     t.time     "response_time"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "website_id"
   end
+
+  add_index "responses", ["website_id"], name: "index_responses_on_website_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
