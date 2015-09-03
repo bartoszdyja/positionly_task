@@ -6,6 +6,13 @@ class Website < ActiveRecord::Base
   after_create :check_status
 
   def check_status
-    responses.create(status: 123)
+    start_time = Time.now
+    response = Faraday.get name
+    response_time = Time.now - start_time
+    responses.create(status: response.status, response_time: response_time)
+  end
+
+  def average_response_time
+    responses.average(:response_time)
   end
 end

@@ -8,6 +8,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'devise'
 gem 'turbolinks'
+gem 'faraday', '~> 0.9.1'
 
 group :development, :test do
   gem 'byebug'
