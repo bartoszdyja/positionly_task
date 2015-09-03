@@ -9,9 +9,8 @@ class WebsitesController < ApplicationController
   def create
     @website = Website.new(website_params)
     @website.user = current_user
-    if @website.save
-      redirect_to root_path
-    end
+    @website.save
+    redirect_to root_path
   end
 
   def destroy
