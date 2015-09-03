@@ -1,7 +1,7 @@
 <%= form_for(@website) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
-  <%= f.submit "Create my account"%>
+  <%= f.submit "Add website"%>
 <% end %> 
 
 <table>
@@ -10,6 +10,7 @@
     <th>Status:</th>
     <th>Response time:</th>
     <th>Average response time:</th>
+    <th>Last update:</th>
     <th>Remove</th>
   <% @websites.each do |w| %>
   <tr>
@@ -17,6 +18,7 @@
     <td><%= w.responses.last.status %></td>
     <td><%= w.responses.last.response_time %></td>
     <td><%= w.average_response_time %></td>
+    <td><%= time_ago_in_words(w.responses.last.updated_at) %> ago</td>
     <td><%=link_to 'Remove', website_path(w), method: :delete %></td>
 
 

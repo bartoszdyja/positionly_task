@@ -15,4 +15,8 @@ class Website < ActiveRecord::Base
   def average_response_time
     responses.average(:response_time)
   end
+
+  def readable_update_time
+    time_ago_in_words(3.minutes.from_now)
+  end
 end
