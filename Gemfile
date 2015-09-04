@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'turbolinks'
 gem 'faraday', '~> 0.9.1'
+gem 'sidekiq'
 
 group :development, :test do
   gem 'byebug'

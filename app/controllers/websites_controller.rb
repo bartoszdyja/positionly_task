@@ -4,6 +4,7 @@ class WebsitesController < ApplicationController
   def index
     @website =Website.new
     @websites = current_user.websites.order('created_at DESC')
+    WebsiteWorker.perform_async('bob')
   end
 
   def create
