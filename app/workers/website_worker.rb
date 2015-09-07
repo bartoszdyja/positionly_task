@@ -5,7 +5,7 @@ class WebsiteWorker
       Website.all.each do  |w|
         if w.last_update< 10.minutes.ago
           w.check_status
-          p 'sprawdzam' + Time.now
+          p 'sprawdzam' + Time.now.to_s
         end
       end
       sleep 5
