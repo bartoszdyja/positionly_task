@@ -10,6 +10,7 @@ class Website < ActiveRecord::Base
     response = Faraday.get name
     response_time = Time.now - start_time
     responses.create(status: response.status, response_time: response_time)
+    self.update(last_update: DateTime.now)
   end
 
   def average_response_time

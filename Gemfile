@@ -10,6 +10,8 @@ gem 'devise'
 gem 'turbolinks'
 gem 'faraday', '~> 0.9.1'
 gem 'sidekiq'
+gem 'sinatra', require: false
+gem 'slim'
 
 group :development, :test do
   gem 'byebug'

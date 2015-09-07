@@ -4,12 +4,13 @@ class WebsitesController < ApplicationController
   def index
     @website =Website.new
     @websites = current_user.websites.order('created_at DESC')
-    WebsiteWorker.perform_async('bob')
+    WebsiteWorker.perform_async()
   end
 
   def create
     @website = Website.new(website_params)
     @website.user = current_user
+    @website.last_update = Time.now
     @website.save
     redirect_to root_path
   end

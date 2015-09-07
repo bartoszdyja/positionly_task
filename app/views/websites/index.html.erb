@@ -18,7 +18,7 @@
     <td><%= w.responses.last.status %></td>
     <td><%= w.responses.last.response_time %></td>
     <td><%= w.average_response_time %></td>
-    <td><%= time_ago_in_words(w.responses.last.updated_at) %> ago</td>
+    <td><%= time_ago_in_words(w.last_update) %> ago</td>
     <td><%=link_to 'Remove', website_path(w), method: :delete %></td>
 
 
